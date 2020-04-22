@@ -23,7 +23,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .title {
@@ -31,11 +30,13 @@ body {
   font-size: 2.5rem;
   font-weight: 800;
   margin: 0 2rem 1rem;
+  text-align: center;
 }
 
 .tagline {
   font-size: 1.2rem;
   margin: 0 2rem;
+  text-align: center;
 }
 
 .grid {
@@ -55,6 +56,7 @@ body {
 
 .block {
   /* border: 7px solid; */
+  padding: 5px;
 }
 
 .block-one {
@@ -66,6 +68,7 @@ body {
   /* background: rgb(182, 126, 145); */
   /* outline: 1px solid; */
   background: black;
+  color: var(--background);
 }
 
 .block-two {
@@ -76,6 +79,7 @@ body {
 .block-three {
   grid-area: three;
   background: black;
+  color: var(--background);
 }
 
 .block-four {
