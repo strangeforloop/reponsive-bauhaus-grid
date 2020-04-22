@@ -20,33 +20,37 @@ body {
 }
 
 .container {
-  margin: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .title {
+  padding-top: 3rem;
   font-size: 2.5rem;
   font-weight: 800;
+  margin: 0 2rem 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 0 2rem;
 }
 
 .grid {
   margin: 2rem 4rem;
-  width: 230px;
+  width: 160px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-areas: ". one two"
-                       "three four ."
-                       "three . five"
-                       ". six-a six-b"
-                       "seven seven six-b"
-                       ". eight six-b"
-                       ". . nine"; */
-  grid-template-areas: ". one two"
-                       "three four five"
-                       "three six-a six-b"
-                       "seven seven six-b"
-                       ". eight six-b"
-                       ". . nine";
-  grid-auto-rows: 70px; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "one two"
+                    "three four"
+                    "three five"
+                    "six-a six-b"
+                    ". six-b"
+                    ". six-b"
+                    "eight nine";
+  grid-auto-rows: 65px; 
 }
 
 .block {
@@ -140,6 +144,27 @@ body {
   grid-area: thirteen;
 } */
 
+@media (min-width: 400px) {
+  .grid {
+    width: 230px;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-areas: ". one two"
+                        "three four ."
+                        "three . five"
+                        ". six-a six-b"
+                        "seven seven six-b"
+                        ". eight six-b"
+                        ". . nine"; */
+    grid-template-areas: ". one two"
+                        "three four five"
+                        "three six-a six-b"
+                        "seven seven six-b"
+                        ". eight six-b"
+                        ". . nine";
+    grid-auto-rows: 70px; 
+  }
+}
+
 @media (min-width: 678px) {
   .grid {
     width: 320px;
@@ -184,9 +209,9 @@ body {
   } */
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
   .grid {
-    width: 480px;
+    width: 460px;
     grid-auto-rows: 88px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: ". one two five ."
@@ -196,3 +221,11 @@ body {
   }
 
 }
+
+    /* grid-template-areas: "one two"
+                       "three four"
+                       "three five"
+                       "six-a six-b"
+                       ". six-b"
+                       ". six-b"
+                       "eight nine"; */
