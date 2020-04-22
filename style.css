@@ -1,32 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+
+:root {
+  --background: #d9d1be;
+  --blue: #1765a3;
+  --red: #e61a23;
+  --yellow: #f6b900;
+}
+
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
   border-collapse: collapse;
 }
 
+body {
+  background-color: var(--background);
+  font-family: 'Baumans', cursive;
+}
+
+.container {
+  margin: 2rem 5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
 .grid {
-  width: 200px;
+  margin: 2rem 4rem;
+  width: 220px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: ". one two"
+  /* grid-template-areas: ". one two"
                        "three four ."
                        "three . five"
-                       ". seven-top seven-top"
-                       "eight eight seven-bottom"
-                       ". nine seven-bottom"
-                       ". . ten";
-  grid-auto-rows: 50px; 
+                       ". six-a six-b"
+                       "seven seven six-b"
+                       ". eight six-b"
+                       ". . nine"; */
+  grid-template-areas: ". one two"
+                       "three four five"
+                       "three six-a six-b"
+                       "seven seven six-b"
+                       ". eight six-b"
+                       ". . nine";
+  grid-auto-rows: 65px; 
 }
 
 .block {
-  border: 1px solid;
+  border: 7px solid;
 }
 
 .block-one {
+  /* border: none; */
   grid-area: one;
-  width: 100%;
-  color: pink;
+  border-right: none;
+  border-bottom: none;
+  /* width: 100%; */
+  /* background: rgb(182, 126, 145); */
+  /* outline: 1px solid; */
 }
 
 .block-two {
@@ -34,44 +68,57 @@
 }
 
 .block-three {
-  grid-area: one;
+  grid-area: three;
 }
 
 .block-four {
   grid-area: four;
-  background: red;
+  background: var(--red);;
+  border-left: none;
 }
 
 .block-five {
   grid-area: five;
-  background: blue;
+  background: var(--blue);
+  border-bottom: none;
 }
 
-.block-six {
-  grid-area: six;
+.block-six-a {
+  grid-area: six-a;
+  border-bottom: none;
+  border-right: none;
 }
 
-.block-seven-top {
+.block-six-b {
+  grid-area: six-b;
+  border-left: none;
+  border-bottom: none;
+}
+
+.block-seven {
+  grid-area: seven;
+}
+/* .block-seven-top {
   grid-area: seven-top;
 }
 
 .block-seven-bottom {
   grid-area: seven-bottom;
-  background: pink;
-}
+} */
 
 .block-eight {
   grid-area: eight;
+  background: var(--blue);
+  border-top: none;
 }
 
 .block-nine {
   grid-area: nine;
-  background: blue;
+  background: var(--yellow);
 }
 
 .block-ten {
   grid-area: ten;
-  background: yellow;
 }
 
 /* .block-eleven {
@@ -85,3 +132,60 @@
 .block-thirteen {
   grid-area: thirteen;
 } */
+
+@media (min-width: 678px) {
+  .grid {
+    width: 320px;
+    grid-auto-rows: 85px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". one two five"
+                         "three four . ."
+                         "three six-a six-a ."
+                         "seven seven six-b nine"
+                         ". eight six-b .";
+  }
+
+  .block-two {
+    border-right: none;
+  }
+
+  .block-three {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .block-four {
+    border-bottom: none;
+    border-left: 7px solid;
+  }
+
+  .block-five {
+    border-bottom: 7px solid;
+  }
+
+  .block-six-a {
+    border-right: 7px solid;
+  }
+
+  .block-six-b {
+    border-top: none;
+    border-bottom: 7px solid;
+  }
+
+  .block-nine {
+    border-left: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .grid {
+    width: 320px;
+    grid-auto-rows: 85px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". one two five ."
+                         "three four six-a six-a ."
+                         "three . .six-b nine"
+                         "seven seven eight six-b .";
+  }
+
+}
